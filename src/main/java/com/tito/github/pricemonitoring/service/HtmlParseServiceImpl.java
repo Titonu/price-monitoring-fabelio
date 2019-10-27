@@ -1,5 +1,6 @@
 package com.tito.github.pricemonitoring.service;
 
+import com.tito.github.pricemonitoring.model.Product;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,5 +96,26 @@ public class HtmlParseServiceImpl implements HtmlParseService {
         } catch (IOException e) {
             return 500;
         }
+    }
+
+    public Product parseHtmlIntoProduct(String url) throws IOException {
+        Document dom = this.getDocumentByUrl(url);
+        String productId = this.getProductIdFromDom(dom);
+        String price = this.getProductPriceFromDomByProductId(dom, productId);
+        String productName = this.getProductNameFromDom(dom);
+        String image = this.getProductImageFromDom(dom);
+        String description = this.getProductDescriptionFromDom(dom);
+//        List<String> thumbnails = htmlParseService.getImageThumbnailsByProductImage(image);
+
+        Product product = new Product();
+        product.setName(productName);
+        product.setPrice(price);
+        product.setImage(image);
+        product.setProductId(Long.valueOf(productId));
+        product.setUrl(url);
+        product.setMinute(LocalDateTime.now().getMinute());
+        product.setDescription(description);
+//        product.setImageThumbnails(initializeNewImageThumbnailsByListString(thumbnails));
+        return product;
     }
 }

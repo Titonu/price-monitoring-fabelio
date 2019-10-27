@@ -57,7 +57,7 @@ public class IntegrationTestRetrieveProductWithProductServiceUseCase {
     @Test
     public void shouldNotNullGetAllProductById() {
         //Access product service method storeProductWithTimeStamp
-        Product productById = productService.getProductById(1L);
+        Product productById = productService.findById(1L);
 
         //Assert the product by id retrieved not null
         assertNotNull(productById);
