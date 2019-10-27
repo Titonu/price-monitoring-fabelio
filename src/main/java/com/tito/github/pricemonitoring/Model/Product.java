@@ -1,7 +1,6 @@
-package com.tito.github.pricemonitoring.Model;
+package com.tito.github.pricemonitoring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;

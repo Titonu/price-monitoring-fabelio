@@ -1,13 +1,10 @@
 package com.tito.github.pricemonitoring.service.product;
 
-import com.tito.github.pricemonitoring.Model.ImageThumbnail;
-import com.tito.github.pricemonitoring.Model.Product;
-import com.tito.github.pricemonitoring.Repository.ImageThumbnailRepository;
-import com.tito.github.pricemonitoring.Repository.ProductRepository;
+import com.tito.github.pricemonitoring.model.Product;
+import com.tito.github.pricemonitoring.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 @Service

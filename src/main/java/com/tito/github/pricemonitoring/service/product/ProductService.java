@@ -1,6 +1,6 @@
 package com.tito.github.pricemonitoring.service.product;
 
-import com.tito.github.pricemonitoring.Model.Product;
+import com.tito.github.pricemonitoring.model.Product;
 
 public interface ProductService {
     public Product storeProductWithTimeStamp(Product product);

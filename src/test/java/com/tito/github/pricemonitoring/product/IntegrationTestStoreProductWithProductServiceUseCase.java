@@ -1,8 +1,8 @@
 package com.tito.github.pricemonitoring.product;
 
-import com.tito.github.pricemonitoring.Model.ImageThumbnail;
-import com.tito.github.pricemonitoring.Model.Product;
-import com.tito.github.pricemonitoring.Repository.ProductRepository;
+import com.tito.github.pricemonitoring.model.ImageThumbnail;
+import com.tito.github.pricemonitoring.model.Product;
+import com.tito.github.pricemonitoring.repository.ProductRepository;
 import com.tito.github.pricemonitoring.service.product.ProductService;
 import com.tito.github.pricemonitoring.service.product.ProductServiceImpl;
 import org.junit.Test;
