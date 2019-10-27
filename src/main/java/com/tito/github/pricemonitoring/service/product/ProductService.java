@@ -1,6 +1,6 @@
 package com.tito.github.pricemonitoring.service.product;
 
-import com.tito.github.pricemonitoring.model.Product;
+import com.tito.github.pricemonitoring.Model.Product;
 
 import java.util.List;
 import java.util.Optional;

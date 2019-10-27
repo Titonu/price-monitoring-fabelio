@@ -1,8 +1,7 @@
 package com.tito.github.pricemonitoring.scheduled;
 
 
-import com.tito.github.pricemonitoring.model.Product;
-import com.tito.github.pricemonitoring.repository.ProductRepository;
+import com.tito.github.pricemonitoring.Model.Product;
 import com.tito.github.pricemonitoring.service.HtmlParseService;
 import com.tito.github.pricemonitoring.service.product.ProductService;
 import org.slf4j.Logger;
@@ -13,13 +12,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Configuration
 @EnableScheduling

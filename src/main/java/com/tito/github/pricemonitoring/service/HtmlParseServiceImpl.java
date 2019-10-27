@@ -1,6 +1,6 @@
 package com.tito.github.pricemonitoring.service;
 
-import com.tito.github.pricemonitoring.model.Product;
+import com.tito.github.pricemonitoring.Model.Product;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class HtmlParseServiceImpl implements HtmlParseService {

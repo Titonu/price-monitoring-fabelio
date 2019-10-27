@@ -1,6 +1,6 @@
 package com.tito.github.pricemonitoring.controller;
 
-import com.tito.github.pricemonitoring.model.Product;
+import com.tito.github.pricemonitoring.Model.Product;
 import com.tito.github.pricemonitoring.service.product.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

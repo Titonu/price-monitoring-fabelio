@@ -1,4 +1,4 @@
-package com.tito.github.pricemonitoring.model;
+package com.tito.github.pricemonitoring.Model;
 
 import lombok.Data;
 

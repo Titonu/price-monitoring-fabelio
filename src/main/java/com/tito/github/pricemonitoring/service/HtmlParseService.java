@@ -1,10 +1,9 @@
 package com.tito.github.pricemonitoring.service;
 
-import com.tito.github.pricemonitoring.model.Product;
+import com.tito.github.pricemonitoring.Model.Product;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
-import java.util.List;
 
 public interface HtmlParseService {
     public Document getDocumentByUrl(String url) throws IOException;

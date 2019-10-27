@@ -1,10 +1,9 @@
 package com.tito.github.pricemonitoring.controller;
 
-import com.tito.github.pricemonitoring.model.ImageThumbnail;
-import com.tito.github.pricemonitoring.model.Product;
+import com.tito.github.pricemonitoring.Model.ImageThumbnail;
+import com.tito.github.pricemonitoring.Model.Product;
 import com.tito.github.pricemonitoring.service.HtmlParseService;
 import com.tito.github.pricemonitoring.service.product.ProductService;
-import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -14,7 +13,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

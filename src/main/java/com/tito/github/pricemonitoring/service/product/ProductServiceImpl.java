@@ -1,7 +1,7 @@
 package com.tito.github.pricemonitoring.service.product;
 
-import com.tito.github.pricemonitoring.model.Product;
-import com.tito.github.pricemonitoring.repository.ProductRepository;
+import com.tito.github.pricemonitoring.Model.Product;
+import com.tito.github.pricemonitoring.Repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
