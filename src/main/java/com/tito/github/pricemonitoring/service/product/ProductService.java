@@ -1,7 +1,9 @@
 package com.tito.github.pricemonitoring.service.product;
 
-import org.springframework.stereotype.Service;
+import com.tito.github.pricemonitoring.Model.Product;
 
-@Service
-public class ProductService {
+public interface ProductService {
+    public Product storeProductWithTimeStamp(Product product);
+    public Product getProductById(Long id);
+    public Iterable<Product> getAllProduct();
 }
