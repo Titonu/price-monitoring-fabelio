@@ -1,4 +1,4 @@
-package com.tito.github.pricemonitoring;
+package com.tito.github.pricemonitoring.htmlparse;
 
 import com.tito.github.pricemonitoring.service.HtmlParseService;
 import com.tito.github.pricemonitoring.service.HtmlParseServiceImpl;
