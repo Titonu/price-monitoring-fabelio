@@ -1,0 +1,53 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page-2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style type="text/css">
+        body{
+            background-color: #fed541;
+        }
+        #container-content {
+            margin-top: 20px;
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="container-content" class="container">
+    <h2>List of Products</h2>
+    <p>The list of products that has been stored:</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Product</th>
+            <th>Created</th>
+            <th>Last Update</th>
+            <th>Last Update</th>
+            <th>Detail</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr class='clickable-row' data-href='url://link-for-first-row/'>
+            <td>1</td>
+            <td>Kursi</td>
+            <td>john@example.com</td>
+            <td>john@example.com</td>
+            <td>john@example.com</td>
+            <td><a href="/">Detail</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
