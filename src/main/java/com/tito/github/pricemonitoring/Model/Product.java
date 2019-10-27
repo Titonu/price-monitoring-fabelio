@@ -1,5 +1,7 @@
 package com.tito.github.pricemonitoring.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,8 +20,10 @@ public class Product {
     private String image;
     @Column(columnDefinition = "text")
     private String description;
-    @OneToMany(mappedBy = "product")
-    private List<ImageThumbnail> imageThumbnails;
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<ImageThumbnail> imageThumbnails;
 }
