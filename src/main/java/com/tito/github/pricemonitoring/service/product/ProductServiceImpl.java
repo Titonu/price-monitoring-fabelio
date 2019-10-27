@@ -18,8 +18,12 @@ public class ProductServiceImpl implements ProductService {
     /**
      * Function used to store new product
      */
-    public Product storeProductWithTimeStamp(Product product){
+    public Product storeProductWithTimeStamp(Product product) {
         product.setCreated(new Date());
+        product.setUpdated(new Date());
+
+        //Resize to bigger image
+        product.setImage(product.getImage().replace("/265x265/", "/700x350/"));
         return productRepository.save(product);
     }
 

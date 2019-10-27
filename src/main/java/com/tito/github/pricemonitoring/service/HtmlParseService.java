@@ -7,9 +7,10 @@ import java.util.List;
 
 public interface HtmlParseService {
     public Document getDocumentByUrl(String url) throws IOException;
+    public String getProductNameFromDom(Document document);
     public String getProductIdFromDom(Document document);
     public String getProductPriceFromDomByProductId(Document document, String productId);
     public String getProductDescriptionFromDom(Document document);
     public String getProductImageFromDom(Document document);
-    public List<String> getImageThumbnailsByProductImage(String image) throws IOException;
+//    public List<String> getImageThumbnailsByProductImage(String image) throws IOException;
 }

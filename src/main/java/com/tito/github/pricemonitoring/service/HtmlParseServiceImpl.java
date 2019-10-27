@@ -16,6 +16,7 @@ public class HtmlParseServiceImpl implements HtmlParseService {
 
     /**
      * Function used to parse dom, which used to get value that expected
+     *
      * @param url must valid url from fabelio product detail page
      * @return document used to get data from dom html
      * @throws IOException throw exception when url not found or connection timeout
@@ -29,6 +30,13 @@ public class HtmlParseServiceImpl implements HtmlParseService {
      */
     public String getProductIdFromDom(Document document) {
         return document.getElementById("productId").val();
+    }
+
+    /**
+     * Function used to get product name from dom
+     */
+    public String getProductNameFromDom(Document document) {
+        return document.select(".page-title").first().text();
     }
 
     /**
@@ -55,14 +63,15 @@ public class HtmlParseServiceImpl implements HtmlParseService {
 
     /**
      * Function used to get image thumbnails
+     *
      * @param image param used for search another thumbnail that available
      * @return {List String} list image thumbnail obtained
      */
-    public List <String> getImageThumbnailsByProductImage(String image) throws IOException {
+    /*public List<String> getImageThumbnailsByProductImage(String image) throws IOException {
         String imagesToThumbnail = image.replace("/image/265x265/", "/thumbnail/88x110/");
         List<String> thumbnailImages = new ArrayList<>();
         int i = 1;
-        /*When image thumbnail url available*/
+        *//*When image thumbnail url available*//*
         while (getResponseCode(imagesToThumbnail) == 200) {
             thumbnailImages.add(imagesToThumbnail);
             imagesToThumbnail = imagesToThumbnail.substring(0, imagesToThumbnail.length() - 5) + i + ".jpg";
@@ -70,15 +79,20 @@ public class HtmlParseServiceImpl implements HtmlParseService {
         }
         return thumbnailImages;
     }
-
+*/
     /**
      * Function used to check availability of each image url
      */
     private int getResponseCode(String urlString) throws IOException {
-        URL u = new URL(urlString);
-        HttpURLConnection huc = (HttpURLConnection) u.openConnection();
-        huc.setRequestMethod("GET");
-        huc.connect();
-        return huc.getResponseCode();
+        try {
+            URL u = new URL(urlString);
+            HttpURLConnection huc = (HttpURLConnection) u.openConnection();
+            huc.setRequestMethod("GET");
+            huc.connect();
+            huc.setConnectTimeout(5000);
+            return huc.getResponseCode();
+        } catch (IOException e) {
+            return 500;
+        }
     }
 }

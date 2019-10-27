@@ -21,6 +21,7 @@ public class Product {
     private String description;
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
+    private Date updated;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     @JsonIgnore

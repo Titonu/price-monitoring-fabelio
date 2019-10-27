@@ -27,15 +27,21 @@ public class HtmlParseServiceImlTest {
 
     @Before
     public void setUp() throws IOException {
-        document = Jsoup.connect("https://fabelio.com/ip/sofa-2-kursi-manu-kit.html").get();
-        productId = "23067";
+        document = Jsoup.connect("https://fabelio.com/ip/sideboard-mikku.html").get();
+        productId = "27853";
         productImage = "https://m2fabelio.imgix.net/catalog/product/cache/image/265x265/beff4985b56e3afdbeabfc89641a4582/m/a/manu_2s_cream_nonshadow_edit_warna_-_2_1.jpg";
         htmlParseService = new HtmlParseServiceImpl();
     }
 
     @Test
     public void shouldNotEmptyGetDocumentByUrlTest() throws IOException {
-        assertNotNull(htmlParseService.getDocumentByUrl("https://fabelio.com/ip/sofa-2-kursi-manu-kit.html"));
+        assertNotNull(htmlParseService.getDocumentByUrl("https://fabelio.com/ip/sideboard-mikku.html"));
+    }
+
+    @Test
+    public void shouldNotEmptyGetProductNameFromDomTest() {
+        assertFalse(htmlParseService.getProductNameFromDom(document).isEmpty());
+        logger.info("product name: {}", htmlParseService.getProductNameFromDom(document));
     }
 
     @Test
@@ -62,11 +68,11 @@ public class HtmlParseServiceImlTest {
         logger.info("product image: {}", htmlParseService.getProductImageFromDom(document));
     }
 
-    @Test
+    /*@Test
     public void shouldNotEmptyGetImageThumbnailsFromProductImageTest() throws IOException {
         assertFalse(htmlParseService.getImageThumbnailsByProductImage(productImage).isEmpty());
         logger.info("product image thumbnails: {}", htmlParseService.getImageThumbnailsByProductImage(productImage));
-    }
+    }*/
 
 
 }
